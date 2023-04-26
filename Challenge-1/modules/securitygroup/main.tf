@@ -21,7 +21,7 @@ resource "azurerm_network_security_group" "web-nsg" {
     direction                  = "Inbound"
     access                     = "Deny"
     protocol                   = "Tcp"
-    source_address_prefix      = "192.168.3.0/24"
+    source_address_prefix      = var.dbsubnetcidr
     source_port_range          = "*"
     destination_address_prefix = "*"
     destination_port_range     = "22"
